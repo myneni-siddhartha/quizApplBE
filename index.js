@@ -14,7 +14,7 @@ const cors = require("cors");
 
 //Connecting to database
 mongoose.Promise = global.Promise;
-mongoose.connect("mongodb://quizadmin:123456@ds241869.mlab.com:41869/quiz", { 'useMongoClient': true })
+mongoose.connect("", { 'useMongoClient': true })
     .then(() => console.log("Connected to quizBE..."))
     
 app.use(bodyParser.urlencoded({ extended: false }));
