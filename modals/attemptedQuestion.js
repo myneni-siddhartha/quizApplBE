@@ -8,9 +8,8 @@ const attemptedQuestion = new mongoose.Schema({
     },
     question:{
         type:mongoose.Schema.Types.ObjectId,
-        ref:'quiz',
-        required:true,
-        unique:true
+        ref:'question',
+        required:true
     },
     optionNumber:{
         type:Number,

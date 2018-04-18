@@ -1,16 +1,14 @@
 const mongoose = require('mongoose');
 
-const quiz = new mongoose.Schema({
+const question = new mongoose.Schema({
     question:{
         type:String,
-        required:true,
-        unique:true
+        required:true
     },
     options:[{
         answer:{
         type:String,
-        required:true,
-        unique:true
+        required:true
         },
         isCorrect:{
             type:Boolean,
@@ -25,9 +23,13 @@ const quiz = new mongoose.Schema({
     numberOfCorrectEntries:{
         type:Number,
         default:0
+    },
+    numberOfAttempts:{
+        type:Number,
+        default:0
     }
     
 
 })
 
-module.exports = mongoose.model('quiz', quiz)
+module.exports = mongoose.model('question', question)

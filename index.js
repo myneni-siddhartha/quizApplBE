@@ -26,7 +26,7 @@ app.use('/',routes);
 
 
 app.listen(3000,function(err){
-    if(err){
+    if(err){    
         console.log("Error occured ");
     }
     else{
