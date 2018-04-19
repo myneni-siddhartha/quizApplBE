@@ -3,9 +3,18 @@ const user = require('../modals/user');
 const question = require('../modals/question');
 const attemptedQuestion = require('../modals/attemptedQuestion');
 
-
+const abc = require('../modals/testModal');
 
 module.exports = {
+
+    // async testModalGetDeletedClgs(req,res){
+    //  try{   var a = await abc.find({"isDeleted":true});
+    //     res.json(a);
+    // }
+    // catch(e){
+    //     res.json(e);
+    // }
+    // },
 
     async createNewUser(req, res) {
         console.log("user>>>", req.body)
@@ -97,10 +106,10 @@ var checkAnswer = async function (questionId, option11) {
     try {
         var flag;
         console.log("checkanswer function",option11)
-        var b = await question.aggregate([{$unwind:'$options'},{$match:{ 'options.optionNumber':Number(option11)}}])
+        var b = await question.aggregate([{$unwind:'$options'},{$match:{'_id':questionId, 'options.optionNumber':Number(option11)}}])
         
             console.log(b);
-            console.log("asdasdasd>>>",b[0].options.isCorrect)
+            // console.log("asdasdasd>>>",b[0].options)
             flag = b[0].options.isCorrect;
         
             return flag;

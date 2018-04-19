@@ -9,6 +9,6 @@ router.post('/userAnswerToQuestion',quizController.userAnswerToQuestion);
 router.post('/getMarksOfUser',quizController.getMarksOfUser);
 router.post('/getQuestionsAttemptedByUser',quizController.getQuestionsAttemptedByUser);
 
-
+// router.post('/getdeleted',quizController.testModalGetDeletedClgs);
 
 module.exports=router;
